@@ -176,7 +176,11 @@
         .overlay-dark {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.9) 100%);
+            background: linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, rgba(5,5,5,1) 100%);
+        }
+
+        .text-shadow-premium {
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
     </style>
 </head>
@@ -188,26 +192,38 @@
         </a>
         <div class="hidden md:flex gap-8 text-sm tracking-widest uppercase font-medium">
             <a href="#sobre" class="hover:text-accent transition-colors">Sobre</a>
-            <a href="#produtos" class="hover:text-accent transition-colors">Serviços & Produtos</a>
+            <a href="#diferenciais" class="hover:text-accent transition-colors">Diferenciais</a>
+            <a href="#produtos" class="hover:text-accent transition-colors">Produtos</a>
             <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
             <a href="#contato" class="hover:text-accent transition-colors">Contato</a>
         </div>
-        <div class="md:hidden text-accent text-2xl">
+        <button id="mobile-menu-btn" class="md:hidden text-accent text-2xl focus:outline-none z-50">
             <i class="fas fa-bars"></i>
-        </div>
+        </button>
     </nav>
+
+    <!-- Menu Mobile (Efeito Cortina) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-darker z-40 flex flex-col items-center justify-center transform -translate-y-full transition-transform duration-700 ease-in-out">
+        <div class="flex flex-col gap-8 text-xl tracking-widest uppercase font-medium text-center">
+            <a href="#sobre" class="mobile-link hover:text-accent transition-colors">Sobre</a>
+            <a href="#diferenciais" class="mobile-link hover:text-accent transition-colors">Diferenciais</a>
+            <a href="#produtos" class="mobile-link hover:text-accent transition-colors">Produtos</a>
+            <a href="#faq" class="mobile-link hover:text-accent transition-colors">FAQ</a>
+            <a href="#contato" class="mobile-link hover:text-accent transition-colors">Contato</a>
+        </div>
+    </div>
 
     <section id="hero" class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2070&auto=format&fit=crop');">
         <div class="overlay-dark"></div>
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20 reveal">
-            <h3 class="text-accent tracking-[0.3em] uppercase text-sm md:text-lg mb-4">A Arte da Perfeição Automotiva</h3>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h3 class="text-accent tracking-[0.3em] uppercase text-sm md:text-lg mb-4 text-shadow-premium">A Arte da Perfeição Automotiva</h3>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-premium">
                 Estética Automotiva <br> <span class="text-gradient-accent">& PPF Premium</span>
             </h1>
-            <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-3xl mx-auto">
+            <p class="text-gray-200 text-lg md:text-xl font-light mb-10 max-w-3xl mx-auto text-shadow-premium">
                 Loja de produtos e acessórios para estética automotiva. Somos especialistas em aplicação de películas de segurança, Insulfilm e PPF. Produtos e serviços para cuidar do seu carro como ele merece!
             </p>
-            <a href="#sobre" class="btn-accent py-4 px-10 text-sm inline-block">Conheça Nossas Soluções</a>
+            <a href="#sobre" class="btn-accent py-4 px-10 text-sm inline-block shadow-2xl">Conheça Nossas Soluções</a>
         </div>
         
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-accent opacity-70">
@@ -235,6 +251,141 @@
                 <div class="absolute -bottom-6 -left-6 bg-dark border border-accent p-6 text-center shadow-xl hidden md:block">
                     <h4 class="text-3xl text-accent mb-1">PPF</h4>
                     <p class="text-xs uppercase tracking-widest text-gray-400">Proteção<br>Máxima</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="py-24 px-6 md:px-16 bg-texture-carbon border-y border-accent/10">
+        <div class="max-w-7xl mx-auto reveal">
+            <div class="text-center mb-16">
+                <h3 class="text-accent tracking-[0.2em] uppercase text-sm mb-2">Padrão de Qualidade</h3>
+                <h2 class="text-4xl md:text-5xl">Por que escolher a <span class="text-gradient-accent">Nexxus</span>?</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto mt-6 text-lg font-light">
+                    Não somos apenas uma loja, somos uma curadoria especializada focada em entregar resultados de alto nível.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-dark p-8 rounded border border-gray-800 hover:border-accent transition-colors">
+                    <i class="fas fa-check-circle text-4xl text-accent mb-6"></i>
+                    <h4 class="text-xl text-white mb-3">100% Originais</h4>
+                    <p class="text-gray-500 font-light text-sm">Trabalhamos apenas com distribuidores oficiais. Garantia total de procedência e eficácia em cada gota de produto.</p>
+                </div>
+                <div class="bg-dark p-8 rounded border border-gray-800 hover:border-accent transition-colors">
+                    <i class="fas fa-boxes text-4xl text-accent mb-6"></i>
+                    <h4 class="text-xl text-white mb-3">Pronta Entrega</h4>
+                    <p class="text-gray-500 font-light text-sm">Amplo estoque físico das marcas mais requisitadas para garantir que o seu projeto ou estúdio nunca pare.</p>
+                </div>
+                <div class="bg-dark p-8 rounded border border-gray-800 hover:border-accent transition-colors">
+                    <i class="fas fa-user-tie text-4xl text-accent mb-6"></i>
+                    <h4 class="text-xl text-white mb-3">Consultoria Técnica</h4>
+                    <p class="text-gray-500 font-light text-sm">Nossa equipe é formada por especialistas que orientam a escolha exata do produto ou serviço para a sua necessidade.</p>
+                </div>
+                <div class="bg-dark p-8 rounded border border-gray-800 hover:border-accent transition-colors">
+                    <i class="fas fa-car-side text-4xl text-accent mb-6"></i>
+                    <h4 class="text-xl text-white mb-3">Serviço de Elite</h4>
+                    <p class="text-gray-500 font-light text-sm">Aplicações de PPF e películas realizadas em ambiente controlado com ferramentas de altíssima precisão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="marcas" class="py-16 px-6 bg-black text-center reveal">
+        <h3 class="text-gray-500 tracking-[0.1em] uppercase text-xs mb-8">Trabalhamos com a Elite do Detailing</h3>
+        <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60">
+            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">VONIXX</h4>
+            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">PROTELIM</h4>
+            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">MENZERNA</h4>
+            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">3M</h4>
+        </div>
+    </section>
+
+    <section id="produtos" class="py-24 px-6 md:px-16 bg-darker border-t border-accent/10">
+        <div class="max-w-7xl mx-auto text-center reveal">
+            <h3 class="text-accent tracking-[0.2em] uppercase text-sm mb-2">Soluções Completas</h3>
+            <h2 class="text-4xl md:text-5xl mb-16">Serviços & <span class="text-gradient-accent">Produtos</span></h2>
+            
+            <p class="text-gray-400 max-w-3xl mx-auto mb-16 text-lg font-light">
+                Do fornecimento de químicos automotivos à blindagem visual do seu veículo. Entregamos a mais alta qualidade para quem exige perfeição em cada detalhe.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center group cursor-default">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-2xl mb-3">PPF & Películas</h3>
+                    <p class="text-sm text-gray-500 font-light">Especialistas em Paint Protection Film, Insulfilm e Películas de Segurança para máxima proteção e privacidade.</p>
+                </div>
+                
+                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center group cursor-default relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="text-2xl mb-3">Loja de Produtos</h3>
+                    <p class="text-sm text-gray-500 font-light">Revendedores oficiais das melhores marcas. Químicos, acessórios, microfibras e equipamentos de alta performance.</p>
+                </div>
+
+                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center group cursor-default">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl mb-3">Estética Automotiva</h3>
+                    <p class="text-sm text-gray-500 font-light">Tudo o que você precisa para lavar, polir, vitrificar e manter o seu veículo sempre com aspecto de zero quilômetro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-32 parallax-bg flex items-center justify-center text-center" style="background-image: url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=2070&auto=format&fit=crop');">
+        <div class="overlay-dark opacity-80"></div>
+        <div class="relative z-10 max-w-4xl px-6 reveal">
+            <i class="fas fa-quote-left text-4xl text-accent mb-6 opacity-50"></i>
+            <h2 class="text-3xl md:text-5xl font-light leading-snug mb-8">
+                "Cuidamos do seu carro como ele merece. Proteção avançada com <span class="text-accent font-bold">PPF</span> e os melhores produtos do mercado."
+            </h2>
+            <div class="w-16 h-1 bg-accent mx-auto"></div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 px-6 md:px-16 bg-texture-carbon relative">
+        <div class="max-w-4xl mx-auto relative z-10 reveal">
+            <div class="text-center mb-16">
+                <h3 class="text-accent tracking-[0.2em] uppercase text-sm mb-2">Tire suas Dúvidas</h3>
+                <h2 class="text-4xl md:text-5xl">Perguntas <span class="text-gradient-accent">Frequentes</span></h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="glass p-6 rounded-lg cursor-pointer group" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-xl font-medium text-white group-hover:text-accent transition-colors">Vocês fazem a aplicação do PPF e Insulfilm na loja?</h4>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300 transform"></i>
+                    </div>
+                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed">
+                        Sim! Somos especialistas na aplicação de películas de segurança, Insulfilm e PPF (Paint Protection Film). Nossa equipe realiza o serviço com padrão de concessionária premium, garantindo acabamento invisível e máxima proteção.
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg cursor-pointer group" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-xl font-medium text-white group-hover:text-accent transition-colors">Vocês vendem produtos para pessoa física (CPF)?</h4>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300 transform"></i>
+                    </div>
+                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed">
+                        Atendemos a todos! Nossa loja de produtos e acessórios é aberta tanto para profissionais (CNPJ) quanto para entusiastas (CPF) apaixonados por cuidar de seus próprios veículos com a linha Vonixx, Protelim, Menzerna e muito mais.
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg cursor-pointer group" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-xl font-medium text-white group-hover:text-accent transition-colors">Como faço para agendar um serviço ou tirar dúvidas de produtos?</h4>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300 transform"></i>
+                    </div>
+                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed">
+                        A forma mais rápida e fácil é clicar no botão do WhatsApp disponível aqui no site. Nossa equipe está pronta para fazer orçamentos de serviços e indicar os melhores produtos para a sua necessidade.
+                    </div>
                 </div>
             </div>
         </div>
@@ -370,6 +521,29 @@
     </a>
 
     <script>
+        // Lógica do Menu Mobile (Efeito Cortina)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('-translate-y-full');
+            if (mobileMenu.classList.contains('-translate-y-full')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
         function toggleFaq(element) {
             const content = element.querySelector('div.hidden, div.block');
             const icon = element.querySelector('i');
