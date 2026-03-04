@@ -182,32 +182,54 @@
         .text-shadow-premium {
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
+        
+        .premium-list li::before {
+            content: "✔";
+            color: #0096FF;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .brand-img {
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .brand-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .filter-white {
+            filter: brightness(0) invert(1);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-accent selection:text-black">
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-8 md:px-16 flex justify-between items-center">
-        <a href="#hero" class="cursor-pointer">
-            <img src="https://i.ibb.co/vCZwyLr5/logonx.png" alt="Nexxus Car Care" class="h-8 md:h-10 object-contain">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-16 flex justify-between items-center">
+        <a href="#hero" class="cursor-pointer z-50 flex-shrink-0">
+            <img id="nav-logo" src="https://i.ibb.co/2YtrbCND/l1.png" alt="Nexxus Car Care" class="h-14 md:h-20 object-contain transition-all duration-500 drop-shadow-[0_4px_15px_rgba(0,0,0,0.9)]">
         </a>
-        <div class="hidden md:flex gap-8 text-sm tracking-widest uppercase font-medium">
+        <div class="hidden md:flex gap-6 text-xs lg:text-sm tracking-widest uppercase font-medium">
             <a href="#sobre" class="hover:text-accent transition-colors">Sobre</a>
-            <a href="#diferenciais" class="hover:text-accent transition-colors">Diferenciais</a>
             <a href="#produtos" class="hover:text-accent transition-colors">Produtos</a>
+            <a href="#precos" class="hover:text-accent transition-colors">Preços</a>
+            <a href="#treinamento" class="hover:text-accent transition-colors">Treinamento</a>
             <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
             <a href="#contato" class="hover:text-accent transition-colors">Contato</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-accent text-2xl focus:outline-none z-50">
-            <i class="fas fa-bars"></i>
+        <button id="mobile-menu-btn" class="md:hidden text-accent text-3xl focus:outline-none z-50">
+            <i class="fas fa-bars drop-shadow-md"></i>
         </button>
     </nav>
 
-    <!-- Menu Mobile (Efeito Cortina) -->
     <div id="mobile-menu" class="fixed inset-0 bg-darker z-40 flex flex-col items-center justify-center transform -translate-y-full transition-transform duration-700 ease-in-out">
-        <div class="flex flex-col gap-8 text-xl tracking-widest uppercase font-medium text-center">
+        <div class="flex flex-col gap-6 text-xl tracking-widest uppercase font-medium text-center">
             <a href="#sobre" class="mobile-link hover:text-accent transition-colors">Sobre</a>
             <a href="#diferenciais" class="mobile-link hover:text-accent transition-colors">Diferenciais</a>
             <a href="#produtos" class="mobile-link hover:text-accent transition-colors">Produtos</a>
+            <a href="#precos" class="mobile-link hover:text-accent transition-colors">Preços</a>
+            <a href="#treinamento" class="mobile-link hover:text-accent transition-colors">Treinamento</a>
             <a href="#faq" class="mobile-link hover:text-accent transition-colors">FAQ</a>
             <a href="#contato" class="mobile-link hover:text-accent transition-colors">Contato</a>
         </div>
@@ -215,15 +237,15 @@
 
     <section id="hero" class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2070&auto=format&fit=crop');">
         <div class="overlay-dark"></div>
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20 reveal">
-            <h3 class="text-accent tracking-[0.3em] uppercase text-sm md:text-lg mb-4 text-shadow-premium">A Arte da Perfeição Automotiva</h3>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-premium">
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto mt-20 reveal">
+            <h3 class="text-accent tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs md:text-lg mb-4 text-shadow-premium">A Arte da Perfeição Automotiva</h3>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-premium">
                 Estética Automotiva <br> <span class="text-gradient-accent">& PPF Premium</span>
             </h1>
-            <p class="text-gray-200 text-lg md:text-xl font-light mb-10 max-w-3xl mx-auto text-shadow-premium">
+            <p class="text-gray-200 text-base sm:text-lg md:text-xl font-light mb-10 max-w-3xl mx-auto text-shadow-premium">
                 Loja de produtos e acessórios para estética automotiva. Somos especialistas em aplicação de películas de segurança, Insulfilm e PPF. Produtos e serviços para cuidar do seu carro como ele merece!
             </p>
-            <a href="#sobre" class="btn-accent py-4 px-10 text-sm inline-block shadow-2xl">Conheça Nossas Soluções</a>
+            <a href="#sobre" class="btn-accent py-4 px-8 md:px-10 text-xs md:text-sm inline-block shadow-2xl">Conheça Nossas Soluções</a>
         </div>
         
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-accent opacity-70">
@@ -236,18 +258,18 @@
             <div class="reveal-left">
                 <h2 class="text-4xl md:text-5xl mb-6"><span class="text-gradient-accent">Nossa</span> Essência</h2>
                 <div class="w-20 h-1 bg-accent mb-8"></div>
-                <p class="text-gray-400 font-light leading-relaxed mb-6 text-lg">
+                <p class="text-gray-400 font-light leading-relaxed mb-6 text-base md:text-lg">
                     A <strong class="text-white font-medium">Nexxus Car Care</strong> é a sua parceira definitiva. Somos uma loja completa de produtos e acessórios de alta performance para estética automotiva.
                 </p>
-                <p class="text-gray-400 font-light leading-relaxed mb-6 text-lg">
+                <p class="text-gray-400 font-light leading-relaxed mb-6 text-base md:text-lg">
                     Além de fornecer o arsenal das melhores marcas do mundo, <strong class="text-white">somos especialistas em aplicação de películas de segurança, Insulfilm e PPF (Paint Protection Film)</strong>.
                 </p>
-                <p class="text-gray-400 font-light leading-relaxed text-lg">
+                <p class="text-gray-400 font-light leading-relaxed text-base md:text-lg">
                     Combinamos os melhores produtos do mercado com serviços de precisão cirúrgica para proteger, restaurar e cuidar do seu carro exatamente como ele merece.
                 </p>
             </div>
             <div class="relative reveal glass p-2 rounded-lg">
-                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2070&auto=format&fit=crop" alt="" class="w-full h-[500px] object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition duration-700">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2070&auto=format&fit=crop" alt="" class="w-full h-80 md:h-[500px] object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition duration-700">
                 <div class="absolute -bottom-6 -left-6 bg-dark border border-accent p-6 text-center shadow-xl hidden md:block">
                     <h4 class="text-3xl text-accent mb-1">PPF</h4>
                     <p class="text-xs uppercase tracking-widest text-gray-400">Proteção<br>Máxima</p>
@@ -261,12 +283,12 @@
             <div class="text-center mb-16">
                 <h3 class="text-accent tracking-[0.2em] uppercase text-sm mb-2">Padrão de Qualidade</h3>
                 <h2 class="text-4xl md:text-5xl">Por que escolher a <span class="text-gradient-accent">Nexxus</span>?</h2>
-                <p class="text-gray-400 max-w-3xl mx-auto mt-6 text-lg font-light">
+                <p class="text-gray-400 max-w-3xl mx-auto mt-6 text-base md:text-lg font-light">
                     Não somos apenas uma loja, somos uma curadoria especializada focada em entregar resultados de alto nível.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="bg-dark p-8 rounded border border-gray-800 hover:border-accent transition-colors">
                     <i class="fas fa-check-circle text-4xl text-accent mb-6"></i>
                     <h4 class="text-xl text-white mb-3">100% Originais</h4>
@@ -292,12 +314,30 @@
     </section>
 
     <section id="marcas" class="py-16 px-6 bg-black text-center reveal">
-        <h3 class="text-gray-500 tracking-[0.1em] uppercase text-xs mb-8">Trabalhamos com a Elite do Detailing</h3>
-        <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60">
-            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">VONIXX</h4>
-            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">PROTELIM</h4>
-            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">MENZERNA</h4>
-            <h4 class="text-2xl md:text-3xl font-bold tracking-widest text-white hover:text-accent transition-colors cursor-default">3M</h4>
+        <div class="container mx-auto px-6 pt-8 border-t border-gray-800">
+            <p class="text-center text-gray-500 uppercase tracking-[0.1em] text-xs font-bold mb-12">Produtos Premium que Utilizamos</p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="w-24 md:w-32 h-16 md:h-20 flex items-center justify-center">
+                    <img src="https://i.ibb.co/vxcVYnL8/vonixx.png" alt="Vonixx" class="brand-img max-w-full max-h-full object-contain" onerror="this.style.display='none'">
+                </div>
+                <div class="w-24 md:w-32 h-16 md:h-20 flex items-center justify-center">
+                    <img src="https://i.ibb.co/pBwky46j/protelim.webp" alt="Protelim" class="brand-img max-w-full max-h-full object-contain" onerror="this.style.display='none'">
+                </div>
+                <div class="w-24 md:w-32 h-16 md:h-20 flex items-center justify-center">
+                    <img src="https://i.ibb.co/HpKhdSGQ/dubboyzz.webp" alt="Dub Boyz" class="brand-img max-w-full max-h-full object-contain" onerror="this.style.display='none'">
+                </div>
+                <div class="w-24 md:w-32 h-16 md:h-20 flex items-center justify-center">
+                    <img src="https://i.ibb.co/mrdRq4QM/cadillac.png" alt="Cadillac" class="brand-img filter-white max-w-full max-h-full object-contain" onerror="this.style.display='none'">
+                </div>
+                <div class="w-24 md:w-32 h-16 md:h-20 flex items-center justify-center">
+                    <img src="https://i.ibb.co/rRrcNyZQ/lincoln.png" alt="Lincoln" class="brand-img max-w-full max-h-full object-contain" onerror="this.style.display='none'">
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-600 text-xs mt-8 font-medium tracking-wide">
+                <span class="opacity-50">+</span> Entre outras marcas referência no mercado global.
+            </p>
         </div>
     </section>
 
@@ -306,30 +346,30 @@
             <h3 class="text-accent tracking-[0.2em] uppercase text-sm mb-2">Soluções Completas</h3>
             <h2 class="text-4xl md:text-5xl mb-16">Serviços & <span class="text-gradient-accent">Produtos</span></h2>
             
-            <p class="text-gray-400 max-w-3xl mx-auto mb-16 text-lg font-light">
+            <p class="text-gray-400 max-w-3xl mx-auto mb-16 text-base md:text-lg font-light">
                 Do fornecimento de químicos automotivos à blindagem visual do seu veículo. Entregamos a mais alta qualidade para quem exige perfeição em cada detalhe.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center group cursor-default">
-                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center cursor-default">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 hover:scale-110 transition-transform">
                         <i class="fas fa-layer-group"></i>
                     </div>
                     <h3 class="text-2xl mb-3">PPF & Películas</h3>
                     <p class="text-sm text-gray-500 font-light">Especialistas em Paint Protection Film, Insulfilm e Películas de Segurança para máxima proteção e privacidade.</p>
                 </div>
                 
-                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center group cursor-default relative overflow-hidden">
-                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center cursor-default relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 hover:opacity-100 transition-opacity"></div>
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 hover:scale-110 transition-transform">
                         <i class="fas fa-spray-can"></i>
                     </div>
                     <h3 class="text-2xl mb-3">Loja de Produtos</h3>
                     <p class="text-sm text-gray-500 font-light">Revendedores oficiais das melhores marcas. Químicos, acessórios, microfibras e equipamentos de alta performance.</p>
                 </div>
 
-                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center group cursor-default">
-                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                <div class="glass glass-card p-10 rounded-lg flex flex-col items-center justify-center text-center cursor-default">
+                    <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent text-3xl mb-6 hover:scale-110 transition-transform">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 class="text-2xl mb-3">Estética Automotiva</h3>
@@ -339,14 +379,317 @@
         </div>
     </section>
 
+    <section id="precos" class="py-24 px-6 md:px-16 bg-texture-carbon border-t border-accent/10 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto relative z-10 reveal">
+            <div class="text-center mb-16">
+                <h3 class="text-accent tracking-[0.2em] uppercase text-sm mb-2">Excelência • Proteção • Alto Padrão</h3>
+                <h2 class="text-4xl md:text-5xl">Tabela de <span class="text-gradient-accent">Preços</span></h2>
+                <p class="text-gray-400 font-light mt-4 text-base md:text-lg">Investimento com garantia de excelência no cuidado do seu veículo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                
+                <div class="lg:col-span-2 glass rounded-xl p-6 md:p-8 border border-gray-800">
+                    <h3 class="text-xl md:text-2xl font-serif mb-6 text-white flex items-center gap-3">
+                        <i class="fas fa-clipboard-check text-accent"></i> Serviços Avulsos
+                    </h3>
+                    
+                    <div class="space-y-0">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-gray-800 py-4 hover:bg-white/5 transition-colors px-2 rounded">
+                            <div>
+                                <h4 class="text-base md:text-lg text-gray-200">Lavagem Simples</h4>
+                                <p class="text-xs md:text-sm text-gray-500 font-light">Tempo médio: Até 2 horas</p>
+                            </div>
+                            <div class="text-lg md:text-xl font-bold text-white mt-2 sm:mt-0">R$ 150,00</div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-gray-800 py-4 hover:bg-white/5 transition-colors px-2 rounded">
+                            <div>
+                                <h4 class="text-base md:text-lg text-gray-200">Lavagem de Motor</h4>
+                                <p class="text-xs md:text-sm text-gray-500 font-light">Tempo médio: Até 2 horas</p>
+                            </div>
+                            <div class="text-lg md:text-xl font-bold text-white mt-2 sm:mt-0">R$ 200,00</div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-gray-800 py-4 hover:bg-white/5 transition-colors px-2 rounded">
+                            <div>
+                                <h4 class="text-base md:text-lg text-gray-200">Lavagem Detalhada</h4>
+                                <p class="text-xs md:text-sm text-gray-500 font-light">Tempo médio: Até 4 horas</p>
+                            </div>
+                            <div class="text-lg md:text-xl font-bold text-white mt-2 sm:mt-0">R$ 350,00</div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-gray-800 py-4 hover:bg-white/5 transition-colors px-2 rounded">
+                            <div>
+                                <h4 class="text-base md:text-lg text-gray-200">Lavagem de Chassis</h4>
+                                <p class="text-xs md:text-sm text-gray-500 font-light">Tempo médio: Até 4 horas</p>
+                            </div>
+                            <div class="text-lg md:text-xl font-bold text-white mt-2 sm:mt-0">R$ 250,00</div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-gray-800 py-4 hover:bg-white/5 transition-colors px-2 rounded">
+                            <div>
+                                <h4 class="text-base md:text-lg text-gray-200">Higienização Completa</h4>
+                                <p class="text-xs md:text-sm text-gray-500 font-light">Tempo médio: Até 2 dias</p>
+                            </div>
+                            <div class="text-lg md:text-xl font-bold text-white mt-2 sm:mt-0">R$ 750,00</div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-gray-800 py-4 hover:bg-white/5 transition-colors px-2 rounded">
+                            <div>
+                                <h4 class="text-base md:text-lg text-gray-200">Polimento Técnico</h4>
+                                <p class="text-xs md:text-sm text-gray-500 font-light">Tempo médio: Até 2 dias</p>
+                            </div>
+                            <div class="text-lg md:text-xl font-bold text-white mt-2 sm:mt-0">R$ 1.000,00</div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center py-4 hover:bg-white/5 transition-colors px-2 rounded">
+                            <div>
+                                <h4 class="text-base md:text-lg text-gray-200">Aplicação de Vitrificação (Coating)</h4>
+                                <p class="text-xs md:text-sm text-gray-500 font-light">Tempo: Até 3 dias • Durabilidade até 3 anos</p>
+                            </div>
+                            <div class="text-lg md:text-xl font-bold text-white mt-2 sm:mt-0">R$ 800,00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1 relative">
+                    <div class="absolute inset-0 bg-accent/20 blur-[50px] rounded-full pointer-events-none"></div>
+                    
+                    <div class="bg-darker border-2 border-accent rounded-xl p-6 md:p-8 relative z-10 h-full flex flex-col shadow-2xl shadow-accent/10">
+                        <div class="absolute -top-4 right-6 bg-accent text-black font-bold uppercase text-xs px-4 py-1 rounded-full tracking-wider">
+                            Mais Escolhido
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-serif mb-2 text-white flex items-center gap-2">
+                            <i class="fas fa-gem text-accent"></i> Pacote Premium
+                        </h3>
+                        <p class="text-xs md:text-sm text-gray-400 font-light mb-6 border-b border-gray-800 pb-4">A transformação estética definitiva para o seu veículo, de ponta a ponta.</p>
+                        
+                        <ul class="premium-list space-y-3 mb-8 flex-grow text-gray-300 font-light text-xs md:text-sm">
+                            <li>Lavagem Detalhada</li>
+                            <li>Lavagem de Motor</li>
+                            <li>Higienização Completa</li>
+                            <li>Polimento Técnico</li>
+                        </ul>
+
+                        <div class="mb-6">
+                            <div class="text-gray-400 text-xs md:text-sm mb-1">Valor do Pacote</div>
+                            <div class="text-2xl md:text-3xl font-bold text-white mb-1">R$ 2.700,00</div>
+                            <div class="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest">Em até 3x no cartão</div>
+                        </div>
+
+                        <div class="bg-accent/10 border border-accent/30 rounded p-4 mb-6 text-center">
+                            <div class="text-[10px] md:text-xs text-accent uppercase tracking-widest mb-1">Valor com Desconto</div>
+                            <div class="text-xl md:text-2xl font-bold text-accent">R$ 2.550,00 <span class="text-xs md:text-sm font-light">no Pix</span></div>
+                        </div>
+
+                        <a href="https://wa.me/5511990093917" target="_blank" class="bg-accent text-black hover:bg-white font-bold uppercase tracking-widest py-3 px-4 rounded text-center transition-colors text-xs md:text-sm">
+                            Agendar Pacote
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 bg-dark p-6 rounded-lg border border-gray-800 flex flex-col lg:flex-row gap-6 justify-between items-center text-xs md:text-sm font-light text-gray-400">
+                <div class="space-y-2 text-center lg:text-left">
+                    <p><i class="fas fa-info-circle text-accent mr-2"></i> Valores para serviços avulsos referem-se a veículos de porte médio.</p>
+                    <p><i class="fas fa-info-circle text-accent mr-2"></i> Atendimento exclusivo mediante agendamento prévio.</p>
+                    <p><i class="fas fa-info-circle text-accent mr-2"></i> Veículos em estado crítico de sujeira passarão por avaliação prévia.</p>
+                </div>
+                <div class="text-center lg:text-right flex-shrink-0">
+                    <div class="flex items-center justify-center lg:justify-end gap-2 text-accent font-medium mb-1">
+                        <i class="fas fa-shield-alt"></i> Garantia Nexxus
+                    </div>
+                    <p class="italic">"O melhor cuidado para seu veículo!"</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="relative py-32 parallax-bg flex items-center justify-center text-center" style="background-image: url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=2070&auto=format&fit=crop');">
         <div class="overlay-dark opacity-80"></div>
         <div class="relative z-10 max-w-4xl px-6 reveal">
             <i class="fas fa-quote-left text-4xl text-accent mb-6 opacity-50"></i>
-            <h2 class="text-3xl md:text-5xl font-light leading-snug mb-8">
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-light leading-snug mb-8">
                 "Cuidamos do seu carro como ele merece. Proteção avançada com <span class="text-accent font-bold">PPF</span> e os melhores produtos do mercado."
             </h2>
             <div class="w-16 h-1 bg-accent mx-auto"></div>
+        </div>
+    </section>
+
+    <section id="treinamento" class="py-24 px-6 md:px-16 bg-darker border-t border-accent/10 relative overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="flex justify-center mb-6">
+                    <img src="https://i.ibb.co/W4565cMy/nxtc.png" alt="" class="h-24 md:h-40 object-contain drop-shadow-[0_0_25px_rgba(0,150,255,0.2)]">
+                </div>
+                <div class="inline-block bg-accent/10 border border-accent/20 px-4 py-1 rounded-full text-accent text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6">
+                    Centro de Treinamento Nexxus
+                </div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-serif leading-tight">
+                    Formação Completa em <br> <span class="text-gradient-accent">Estética Automotiva</span>
+                </h2>
+                <h3 class="text-lg md:text-2xl font-light text-gray-300 italic mb-8">
+                    "Transforme conhecimento em autoridade. Transforme técnica em faturamento."
+                </h3>
+                
+                <p class="text-gray-400 font-light leading-relaxed max-w-4xl mx-auto text-base md:text-lg">
+                    Desenvolvida para capacitar profissionais do zero ao avançado, unindo teoria técnica, prática intensiva e visão estratégica de mercado. 
+                    <strong class="text-white">Aqui, o aluno não aprende apenas a executar serviços.</strong> Aprende a trabalhar com padrão profissional, posicionamento premium e precificação correta.
+                </p>
+            </div>
+
+            <div class="mb-20 reveal">
+                <h3 class="text-2xl md:text-3xl font-serif text-center text-white mb-12 border-b border-gray-800 pb-4 inline-block mx-auto flex justify-center">O Que Você Vai Aprender</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="glass p-6 md:p-8 rounded-xl border-t-4 border-t-accent hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded bg-dark flex items-center justify-center text-accent text-xl md:text-2xl shadow-lg border border-gray-800">
+                                01
+                            </div>
+                            <h4 class="text-lg md:text-xl font-bold text-white uppercase">Lavagem Técnica e Ecológica</h4>
+                        </div>
+                        <ul class="premium-list space-y-2 text-xs md:text-sm text-gray-400 font-light mb-6">
+                            <li>Lavagem técnica de motor com segurança</li>
+                            <li>Uso correto de produtos (ácidos, alcalinos e neutros)</li>
+                            <li>Diluições e aplicação profissional</li>
+                            <li>Técnica Snow Foam</li>
+                            <li>Método dos dois baldes</li>
+                            <li>Remoção de chuva ácida</li>
+                            <li>Revitalização de plásticos</li>
+                            <li>Cristalização de para-brisa</li>
+                            <li>Precificação dos serviços</li>
+                        </ul>
+                        <div class="bg-accent/10 text-accent text-xs md:text-sm p-3 rounded font-medium border border-accent/20 italic">
+                            Você aprende não só a lavar — mas a entregar padrão técnico.
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 md:p-8 rounded-xl border-t-4 border-t-accent hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded bg-dark flex items-center justify-center text-accent text-xl md:text-2xl shadow-lg border border-gray-800">
+                                02
+                            </div>
+                            <h4 class="text-lg md:text-xl font-bold text-white uppercase">Higienização Interna</h4>
+                        </div>
+                        <ul class="premium-list space-y-2 text-xs md:text-sm text-gray-400 font-light mb-6">
+                            <li>Tabela de pH e Ciclo de Sinner</li>
+                            <li>Limpeza completa de interior</li>
+                            <li>Bancos em tecido e couro</li>
+                            <li>Limpeza de carpete e tapetes</li>
+                            <li>Impermeabilização de tecido</li>
+                            <li>Oxisanitização</li>
+                            <li>Revitalização de plásticos internos</li>
+                        </ul>
+                        <div class="bg-accent/10 text-accent text-xs md:text-sm p-3 rounded font-medium border border-accent/20 italic mt-auto">
+                            Domine técnicas que elevam o valor do serviço.
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 md:p-8 rounded-xl border-t-4 border-t-accent hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded bg-dark flex items-center justify-center text-accent text-xl md:text-2xl shadow-lg border border-gray-800">
+                                03
+                            </div>
+                            <h4 class="text-lg md:text-xl font-bold text-white uppercase">Polimento Técnico I</h4>
+                        </div>
+                        <ul class="premium-list space-y-2 text-xs md:text-sm text-gray-400 font-light mb-6">
+                            <li>Estrutura da pintura automotiva</li>
+                            <li>Identificação de defeitos no verniz</li>
+                            <li>Leitura de micragem</li>
+                            <li>Lixamento técnico direcionado</li>
+                            <li>Corte, refino e lustro</li>
+                            <li>Uso profissional de politriz rotativa</li>
+                        </ul>
+                        <div class="bg-accent/10 text-accent text-xs md:text-sm p-3 rounded font-medium border border-accent/20 italic">
+                            Aprenda correção de pintura com base técnica real.
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 md:p-8 rounded-xl border-t-4 border-t-accent hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 rounded bg-dark flex items-center justify-center text-accent text-xl md:text-2xl shadow-lg border border-gray-800">
+                                04
+                            </div>
+                            <h4 class="text-lg md:text-xl font-bold text-white uppercase">Polimento Técnico II e Proteção</h4>
+                        </div>
+                        <ul class="premium-list space-y-2 text-xs md:text-sm text-gray-400 font-light mb-6">
+                            <li>Descontaminação com Clay Bar</li>
+                            <li>Mascaramento técnico</li>
+                            <li>Spot Test e definição de setup</li>
+                            <li>Correção completa da pintura</li>
+                            <li>Uso de roto orbital</li>
+                            <li>Aplicação de ceras, selantes e vitrificadores (5H / 7H / 9H)</li>
+                            <li>Revitalização de faróis</li>
+                        </ul>
+                        <div class="bg-accent/10 text-accent text-xs md:text-sm p-3 rounded font-medium border border-accent/20 italic">
+                            Formação completa em correção e proteção de pintura.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20 reveal border-b border-gray-800 pb-20">
+                <div>
+                    <h4 class="text-xl text-white font-serif mb-6 flex items-center gap-3"><i class="fas fa-star text-accent"></i> Diferenciais</h4>
+                    <ul class="premium-list space-y-3 text-sm text-gray-400 font-light">
+                        <li>Aulas 100% práticas</li>
+                        <li>Veículo real para aplicação</li>
+                        <li>Turmas reduzidas</li>
+                        <li>Acompanhamento individual</li>
+                        <li>Ensino de precificação estratégica</li>
+                        <li>Certificação profissional</li>
+                        <li>Suporte e direcionamento de mercado</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl text-white font-serif mb-6 flex items-center gap-3"><i class="fas fa-users text-accent"></i> Para Quem É?</h4>
+                    <ul class="premium-list space-y-3 text-sm text-gray-400 font-light">
+                        <li>Para quem quer iniciar do zero</li>
+                        <li>Para profissionais que desejam subir o padrão</li>
+                        <li>Para donos de estética que querem estruturar equipe</li>
+                        <li>Para quem deseja aumentar faturamento</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl text-white font-serif mb-6 flex items-center gap-3"><i class="fas fa-rocket text-accent"></i> Resultados</h4>
+                    <p class="text-sm text-gray-400 font-light mb-4">Ao concluir a formação, o aluno estará apto a:</p>
+                    <ul class="premium-list space-y-3 text-sm text-gray-400 font-light">
+                        <li>Executar serviços com segurança técnica</li>
+                        <li>Trabalhar com padrão premium</li>
+                        <li>Precificar corretamente</li>
+                        <li>Gerar mais lucro</li>
+                        <li>Se posicionar como profissional de autoridade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl p-6 md:p-12 border border-accent/20 reveal flex flex-col items-center max-w-4xl mx-auto">
+                <div class="text-center w-full">
+                    <h4 class="text-accent uppercase tracking-widest text-xs font-bold mb-2">Instrutor Master</h4>
+                    <h3 class="text-3xl md:text-4xl font-serif text-white mb-4">Raphael Bretas</h3>
+                    <p class="text-gray-400 font-light leading-relaxed mb-4 text-sm md:text-base">
+                        Especialista em Estética Automotiva com mais de 10 anos de experiência. Instrutor com formação técnica certificada e atuação em instituições reconhecidas do setor.
+                    </p>
+                    <p class="text-gray-300 font-medium italic mb-8 border-l-2 border-accent pl-4 text-left inline-block text-sm md:text-base">
+                        "Autoridade prática, didática e compromisso inabalável com o padrão profissional."
+                    </p>
+                    <br>
+                    <a href="https://wa.me/5511990093917" target="_blank" class="btn-accent py-4 px-6 md:px-8 inline-flex items-center justify-center gap-3 text-xs md:text-sm shadow-xl shadow-accent/20 w-full sm:w-auto">
+                        <i class="fab fa-whatsapp text-lg md:text-xl"></i> Garantir Minha Vaga
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -360,30 +703,40 @@
             <div class="space-y-4">
                 <div class="glass p-6 rounded-lg cursor-pointer group" onclick="toggleFaq(this)">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-medium text-white group-hover:text-accent transition-colors">Vocês fazem a aplicação do PPF e Insulfilm na loja?</h4>
+                        <h4 class="text-base md:text-xl font-medium text-white group-hover:text-accent transition-colors">Vocês fazem a aplicação do PPF e Insulfilm na loja?</h4>
                         <i class="fas fa-chevron-down text-accent transition-transform duration-300 transform"></i>
                     </div>
-                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed">
+                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed text-sm md:text-base">
                         Sim! Somos especialistas na aplicação de películas de segurança, Insulfilm e PPF (Paint Protection Film). Nossa equipe realiza o serviço com padrão de concessionária premium, garantindo acabamento invisível e máxima proteção.
                     </div>
                 </div>
 
                 <div class="glass p-6 rounded-lg cursor-pointer group" onclick="toggleFaq(this)">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-medium text-white group-hover:text-accent transition-colors">Vocês vendem produtos para pessoa física (CPF)?</h4>
+                        <h4 class="text-base md:text-xl font-medium text-white group-hover:text-accent transition-colors">Vocês vendem produtos para pessoa física (CPF)?</h4>
                         <i class="fas fa-chevron-down text-accent transition-transform duration-300 transform"></i>
                     </div>
-                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed">
+                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed text-sm md:text-base">
                         Atendemos a todos! Nossa loja de produtos e acessórios é aberta tanto para profissionais (CNPJ) quanto para entusiastas (CPF) apaixonados por cuidar de seus próprios veículos com a linha Vonixx, Protelim, Menzerna e muito mais.
                     </div>
                 </div>
 
                 <div class="glass p-6 rounded-lg cursor-pointer group" onclick="toggleFaq(this)">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-medium text-white group-hover:text-accent transition-colors">Como faço para agendar um serviço ou tirar dúvidas de produtos?</h4>
+                        <h4 class="text-base md:text-xl font-medium text-white group-hover:text-accent transition-colors">Como funciona a Formação Completa do Centro de Treinamento?</h4>
                         <i class="fas fa-chevron-down text-accent transition-transform duration-300 transform"></i>
                     </div>
-                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed">
+                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed text-sm md:text-base">
+                        O curso é 100% presencial e prático, focado em ensinar do zero ao avançado. Turmas reduzidas garantem atenção individualizada do instrutor Raphael Bretas. Você sai com certificado e apto a atuar no mercado com alto padrão. Entre em contato para ver as próximas datas!
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg cursor-pointer group" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-base md:text-xl font-medium text-white group-hover:text-accent transition-colors">Como faço para agendar um serviço ou tirar dúvidas de produtos?</h4>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300 transform"></i>
+                    </div>
+                    <div class="hidden mt-4 text-gray-400 font-light leading-relaxed text-sm md:text-base">
                         A forma mais rápida e fácil é clicar no botão do WhatsApp disponível aqui no site. Nossa equipe está pronta para fazer orçamentos de serviços e indicar os melhores produtos para a sua necessidade.
                     </div>
                 </div>
@@ -395,16 +748,16 @@
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm z-0"></div>
         
         <div class="max-w-5xl mx-auto text-center relative z-10 reveal">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-serif leading-tight">Vamos acelerar o seu projeto?</h2>
-            <p class="text-gray-300 text-lg md:text-2xl font-light mb-12 max-w-3xl mx-auto">
-                Dúvidas técnicas, compras no atacado, orçamentos de serviços ou parcerias comerciais. Nossa equipe está pronta para entregar a melhor solução.
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-serif leading-tight">Vamos acelerar o seu projeto?</h2>
+            <p class="text-gray-300 text-base md:text-2xl font-light mb-12 max-w-3xl mx-auto">
+                Dúvidas técnicas, matrículas em cursos, compras no atacado ou agendamento de serviços. Nossa equipe está pronta para entregar a melhor solução.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="https://wa.me/5511990093917" target="_blank" class="btn-accent py-4 px-10 uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl">
-                    <i class="fab fa-whatsapp text-2xl"></i> Central de Vendas
+                <a href="https://wa.me/5511990093917" target="_blank" class="btn-accent py-4 px-6 md:px-10 uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl text-xs md:text-sm">
+                    <i class="fab fa-whatsapp text-xl md:text-2xl"></i> Falar no WhatsApp
                 </a>
-                <a href="#contato" class="bg-transparent text-white border-2 border-white hover:bg-white hover:text-black py-4 px-10 uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center gap-3">
-                    <i class="fas fa-handshake text-xl"></i> Seja um Parceiro
+                <a href="#contato" class="bg-transparent text-white border-2 border-white hover:bg-white hover:text-black py-4 px-6 md:px-10 uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center gap-3 text-xs md:text-sm">
+                    <i class="fas fa-map-marker-alt text-lg md:text-xl"></i> Ver Endereço
                 </a>
             </div>
         </div>
@@ -415,43 +768,43 @@
             
             <div>
                 <h3 class="text-accent tracking-[0.2em] uppercase text-sm mb-2">Visite nossa Loja</h3>
-                <h2 class="text-4xl mb-8">Fale com a <span class="text-gradient-accent">Nexxus</span></h2>
-                <p class="text-gray-400 font-light mb-8">
+                <h2 class="text-3xl md:text-4xl mb-8">Fale com a <span class="text-gradient-accent">Nexxus</span></h2>
+                <p class="text-gray-400 font-light mb-8 text-sm md:text-base">
                     Seja para adquirir os melhores produtos do mercado ou para agendar a aplicação de PPF e películas, nossa equipe está à disposição para atender você com exclusividade.
                 </p>
                 
                 <div class="space-y-6 mt-6">
                     <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-dark rounded flex items-center justify-center text-accent border border-accent/20 flex-shrink-0">
-                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-dark rounded flex items-center justify-center text-accent border border-accent/20 flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-lg md:text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl mb-1">Endereço</h4>
-                            <p class="text-gray-400 font-light">Av. João Pedro Cardoso, 538<br>Jabaquara, São Paulo - SP</p>
+                            <h4 class="text-lg md:text-xl mb-1">Endereço</h4>
+                            <p class="text-gray-400 font-light text-sm md:text-base">Av. João Pedro Cardoso, 538<br>Jabaquara, São Paulo - SP</p>
                         </div>
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-dark rounded flex items-center justify-center text-accent border border-accent/20 flex-shrink-0">
-                            <i class="fas fa-clock text-xl"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-dark rounded flex items-center justify-center text-accent border border-accent/20 flex-shrink-0">
+                            <i class="fas fa-clock text-lg md:text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl mb-1">Horário de Atendimento</h4>
-                            <p class="text-gray-400 font-light">Segunda a Sexta: 08:00 - 18:00<br>Sábados: 08:00 - 14:00</p>
+                            <h4 class="text-lg md:text-xl mb-1">Horário de Atendimento</h4>
+                            <p class="text-gray-400 font-light text-sm md:text-base">Segunda a Sexta: 08:00 - 18:00<br>Sábados: 08:00 - 14:00</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-12">
-                    <a href="https://wa.me/5511990093917" target="_blank" class="btn-accent py-5 px-8 w-full block text-center flex items-center justify-center gap-4 text-lg rounded shadow-lg shadow-accent/20 hover:shadow-accent/40">
-                        <i class="fab fa-whatsapp text-3xl"></i> 
+                    <a href="https://wa.me/5511990093917" target="_blank" class="btn-accent py-4 md:py-5 px-6 md:px-8 w-full block text-center flex items-center justify-center gap-3 md:gap-4 text-base md:text-lg rounded shadow-lg shadow-accent/20 hover:shadow-accent/40">
+                        <i class="fab fa-whatsapp text-2xl md:text-3xl"></i> 
                         <span class="font-bold tracking-widest">(11) 99009-3917</span>
                     </a>
                     <p class="text-center text-gray-500 text-xs mt-3 font-light">Clique para iniciar uma conversa agora mesmo.</p>
                 </div>
             </div>
 
-            <div class="h-full min-h-[400px] w-full rounded-lg relative">
+            <div class="h-64 sm:h-80 md:h-full min-h-[300px] md:min-h-[400px] w-full rounded-lg relative">
                 <div class="absolute inset-0 border border-accent/20 rounded-lg pointer-events-none z-10"></div>
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.4367339794537!2d-46.666998223930434!3d-23.62451996387877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a62d6b38c03%3A0xc3f12f205ab411ce!2sAv.%20Jo%C3%A3o%20Pedro%20Cardoso%2C%20538%20-%20Parque%20Jabaquara%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004355-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
@@ -468,14 +821,14 @@
     </section>
 
     <footer class="bg-black pt-20 pb-10 border-t border-accent/10">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-center md:text-left">
             
-            <div>
-                <img src="https://i.ibb.co/vCZwyLr5/logonx.png" alt="Nexxus Car Care" class="h-10 object-contain mb-6">
+            <div class="flex flex-col items-center md:items-start">
+                <img src="https://i.ibb.co/2YtrbCND/l1.png" alt="Nexxus Car Care" class="h-14 md:h-20 object-contain mb-6 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
                 <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">
-                    Loja de produtos e acessórios para estética automotiva. Somos especialistas em aplicação de películas de segurança, Insulfilm e PPF.
+                    Loja de produtos e acessórios para estética automotiva, Centro de Treinamento e serviços especializados em PPF.
                 </p>
-                <div class="flex gap-4 text-xl text-gray-500">
+                <div class="flex gap-4 text-xl text-gray-500 justify-center md:justify-start">
                     <a href="#" class="hover:text-accent transition-colors w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-accent"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="hover:text-accent transition-colors w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-accent"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="hover:text-accent transition-colors w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-accent"><i class="fab fa-tiktok"></i></a>
@@ -484,23 +837,23 @@
 
             <div>
                 <h4 class="text-lg font-serif mb-6 text-white border-b border-accent/20 pb-2 inline-block">Navegação</h4>
-                <ul class="space-y-3 text-sm text-gray-400 font-light">
+                <ul class="space-y-3 text-sm text-gray-400 font-light flex flex-col items-center md:items-start">
                     <li><a href="#hero" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Início</a></li>
                     <li><a href="#sobre" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Sobre Nós</a></li>
-                    <li><a href="#produtos" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Produtos e Serviços</a></li>
-                    <li><a href="#faq" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Perguntas Frequentes</a></li>
-                    <li><a href="#contato" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Contato</a></li>
+                    <li><a href="#produtos" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Produtos</a></li>
+                    <li><a href="#precos" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Preços de Serviços</a></li>
+                    <li><a href="#treinamento" class="hover:text-accent transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-accent text-xs"></i> Centro de Treinamento</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="text-lg font-serif mb-6 text-white border-b border-accent/20 pb-2 inline-block">Fale Conosco</h4>
-                <ul class="space-y-4 text-sm text-gray-400 font-light">
-                    <li class="flex items-start gap-3">
-                        <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                <ul class="space-y-4 text-sm text-gray-400 font-light flex flex-col items-center md:items-start text-center md:text-left">
+                    <li class="flex items-start gap-3 flex-col md:flex-row items-center md:items-start">
+                        <i class="fas fa-map-marker-alt text-accent mt-0 md:mt-1"></i>
                         <span>Av. João Pedro Cardoso, 538<br>Jabaquara, São Paulo - SP<br>CEP: 04355-000</span>
                     </li>
-                    <li class="flex items-center gap-3">
+                    <li class="flex items-center gap-3 justify-center md:justify-start">
                         <i class="fab fa-whatsapp text-accent"></i>
                         <span>(11) 99009-3917</span>
                     </li>
@@ -516,12 +869,11 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/5511990093917" target="_blank" class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full flex items-center justify-center btn-whatsapp-fixed shadow-2xl">
-        <i class="fab fa-whatsapp text-4xl"></i>
+    <a href="https://wa.me/5511990093917" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center btn-whatsapp-fixed shadow-2xl">
+        <i class="fab fa-whatsapp text-3xl md:text-4xl"></i>
     </a>
 
     <script>
-        // Lógica do Menu Mobile (Efeito Cortina)
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = mobileMenuBtn.querySelector('i');
@@ -568,17 +920,28 @@
         }
 
         const navbar = document.getElementById('navbar');
+        const navLogo = document.getElementById('nav-logo');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('glass');
                 navbar.classList.remove('py-6');
                 navbar.classList.add('py-4');
                 navbar.style.borderBottom = '1px solid rgba(0, 150, 255, 0.2)';
+                
+                if(navLogo) {
+                    navLogo.classList.remove('h-14', 'md:h-20');
+                    navLogo.classList.add('h-10', 'md:h-14');
+                }
             } else {
                 navbar.classList.remove('glass');
                 navbar.classList.add('py-6');
                 navbar.classList.remove('py-4');
                 navbar.style.borderBottom = 'none';
+                
+                if(navLogo) {
+                    navLogo.classList.remove('h-10', 'md:h-14');
+                    navLogo.classList.add('h-14', 'md:h-20');
+                }
             }
         });
 
